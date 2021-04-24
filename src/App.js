@@ -16,6 +16,7 @@ function App() {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
+        //login
         dispatch(
           login({
             uid: userAuth.uid,
@@ -23,12 +24,13 @@ function App() {
           })
         );
       } else {
-        dispatch(logout);
+        //logged out
+        dispatch(logout());
       }
     });
 
     return unsubscribe;
-  }, []);
+  }, [dispatch]);
   return (
     <div className="app">
       <Router>
