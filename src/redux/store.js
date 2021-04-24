@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from "redux";
-import { filmsReducer } from "../redux/filmsReducer";
+import { userReducer } from "../redux/userReducer";
 import thunk from "redux-thunk";
 
 const composeEnhancers =
@@ -9,6 +9,6 @@ const composeEnhancers =
 
 const enhancer = composeEnhancers(applyMiddleware(thunk));
 
-const store = createStore(filmsReducer, enhancer);
+const store = createStore(userReducer, enhancer);
 
 export default store;
